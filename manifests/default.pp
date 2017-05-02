@@ -1,3 +1,4 @@
- class { 'kubernetes::client': manage_package => false, }
- class { 'kubernetes::node':   manage_package => false, }
- class { 'kubernetes::master': manage_package => false, }
+include kubernetes::client
+include kubernetes::node::kubelet
+include kubernetes::node::kube_proxy
+ 
